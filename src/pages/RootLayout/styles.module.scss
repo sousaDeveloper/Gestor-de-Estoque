@@ -1,0 +1,51 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #393939;
+
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+nav a,
+.logo {
+  font-weight: 600;
+  color: #fefefe;
+  text-decoration: none;
+  transition: 0.2s;
+  border: 1px solid transparent;
+
+  &:hover {
+    color: #858585;
+  }
+}
+
+a::before,
+.logo::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1.7px;
+  margin-top: 1.2rem;
+  background-color: #ffffff;
+  z-index: 1;
+  transition: width 0.2s ease-in-out;
+}
+
+.logo:hover::before {
+  width: 6.3rem;
+}
+
+nav a:hover::before {
+  width: 2.5rem;
+}
+
+footer {
+  background-color: #393939;
+  text-align: center;
+  padding: 1rem;
+}
