@@ -10,7 +10,7 @@ export default function RootLayout() {
         </Link>
         <nav className={styles.nav}>
           <Link to="/">Início</Link>
-          <Link to="/items">Items</Link>
+          <Link to="/items"> Itens</Link>
         </nav>
       </header>
       <div>
