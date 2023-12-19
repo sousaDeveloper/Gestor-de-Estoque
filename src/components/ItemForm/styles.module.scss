@@ -1,142 +1,109 @@
+@mixin inputs-stylizing($width, $background-color, $border, $padding, $text-align, $color, $border-radius) {
+  width: $width;
+  background-color: $background-color;
+  border: $border;
+  padding: $padding;
+  text-align: $text-align;
+  color: $color;
+  border-radius: $border-radius;
+}
+
 form {
-  max-width: 70rem;
+  max-width: 50rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
   background-color: #1f1f1f;
   box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.25);
   border-radius: 0.3rem;
   font-weight: 500;
 
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    column-gap: 1.5rem;
+  fieldset {
+    border-radius: 0.3rem;
+    padding: 1rem;
+    width: 100%;
 
-    div {
-      display: flex;
-      flex-direction: column;
-
-      input {
-        background-color: #303030;
-        border-radius: 0.2rem;
-        border: none;
-        width: 13rem;
-        padding: 0.5rem 0.3rem 0.5rem 0.3rem;
-        text-align: start;
-        color: #fff;
-      }
-
-      select {
-        width: 13rem;
-        background-color: #303030;
-        border-radius: 0.2rem;
-        border: none;
-        padding: 0.5rem 0 0.5rem 0;
-        text-align: start;
-        color: #fff;
-      }
+    legend {
+      text-align: center;
+      padding: 0 0.4rem;
     }
   }
 
-  .formControl {
+  .gridForm {
     display: grid;
-    padding-left: 5.8rem;
+    row-gap: 1rem;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .description {
-      max-width: 56.42rem;
-      padding: 0 0.5rem 0 0.5rem;
-      height: 4rem;
-      color: #fff;
-      background-color: #303030;
-      border: none;
-      border-radius: 0.2rem;
-      font-size: 1.5rem;
+  div {
+    display: flex;
+    flex-direction: column;
+
+    input,
+    select {
+      @include inputs-stylizing(13rem, #303030, none, 0.5rem 0.3rem, start, #fff, 0.2rem);
+    }
+  }
+}
+
+.formControl {
+  .description {
+    max-width: 25rem;
+    padding: 0 0.5rem;
+    height: 4rem;
+    color: #fff;
+    background-color: #303030;
+    border: none;
+    border-radius: 0.2rem;
+    font-size: 1.2rem;
+  }
+
+  .buttonSave {
+    padding: 0.4rem 0;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.4rem;
+    border: none;
+    width: 5rem;
+    color: #212121;
+    border-radius: 0.1rem;
+    z-index: 1;
+    background: #e8e8e8;
+    position: relative;
+    font-size: 1rem;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+    transition: all 0.2s;
+    overflow: hidden;
+
+    &:hover {
+      color: #e8e8e8;
     }
 
-    .buttonSave {
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 0.4rem;
-      border: none;
-      width: 5rem;
-      color: #212121;
-      border-radius: 0.1rem;
-      z-index: 1;
-      background: #e8e8e8;
-      position: relative;
-      font-size: 1rem;
+    &:hover::before {
+      width: 100%;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      background-color: #121212;
+      z-index: -1;
       -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
       box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-      transition: all 0.2s;
-      overflow: hidden;
-
-      &:hover {
-        color: #e8e8e8;
-      }
-
-      &:hover::before {
-        width: 100%;
-      }
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 0;
-        background-color: #121212;
-        z-index: -1;
-        -webkit-box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-        box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-        transition: all 250ms;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 1150px) {
-  form {
-    .formControl {
-      padding-left: 5rem;
-    }
-  }
-}
-
-@media screen and (max-width: 1025px) {
-  form {
-    .formControl {
-      padding-left: 1.75rem;
-
-      .description {
-        max-width: 56.6rem;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 769px) {
-  form {
-    .row {
-      display: grid;
-      place-items: center;
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .formControl {
-      margin-top: 0.7rem;
-      .description {
-        max-width: 40.8rem;
-      }
+      transition: all 250ms;
     }
   }
 }
 
 @media screen and (max-width: 450px) {
   form {
-    .formControl {
-      padding: 0;
+    .gridForm {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }
@@ -151,10 +118,6 @@ form {
       select {
         height: 2rem;
       }
-    }
-
-    .formControl {
-      padding: 0;
     }
   }
 }
