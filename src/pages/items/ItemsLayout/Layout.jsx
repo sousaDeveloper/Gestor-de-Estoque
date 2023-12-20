@@ -12,7 +12,7 @@ export default function ItemsLayout() {
           Todos os Itens
         </Link>
         <Link to="/items/new" className={`${styles.tab}  ${pathname === "/items/new" ? styles.active : ""}`}>
-          Novo Item
+          Criar Item
         </Link>
       </div>
       <Outlet />

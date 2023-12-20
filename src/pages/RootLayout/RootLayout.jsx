@@ -5,7 +5,7 @@ export default function RootLayout() {
   return (
     <>
       <header className={styles.header}>
-        <h3>REACT STOCK</h3>
+        <p>REACT STOCK</p>
         <nav>
           <ul className={styles.menu}>
             <li>
@@ -14,19 +14,9 @@ export default function RootLayout() {
               </Link>
             </li>
             <li>
-              <a>Itens</a>
-              <ul className={styles.submenu}>
-                <li>
-                  <Link to="/items/new">
-                    <a>Criar Item</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/items">
-                    <a>Ver Itens</a>
-                  </Link>
-                </li>
-              </ul>
+              <Link to="/items">
+                <a>Itens</a>
+              </Link>
             </li>
           </ul>
         </nav>

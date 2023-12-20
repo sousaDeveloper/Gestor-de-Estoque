@@ -1,0 +1,79 @@
+@mixin button-styles($background-color, $padding, $color, $border-radius, $border, $cursor, $font-weight, $transition) {
+  background-color: $background-color;
+  padding: $padding;
+  color: $color;
+  border-radius: $border-radius;
+  border: $border;
+  cursor: $cursor;
+  font-weight: $font-weight;
+  transition: $transition;
+}
+
+.mainTitle {
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.buttonModal {
+  @include button-styles(#ff0000, 0.4rem 0.5rem, #fff, 0.3rem, none, pointer, 600, 0.3s);
+  margin-left: 0.6rem;
+  border: 1px solid #000;
+
+  &:hover {
+    background-color: #2c0000;
+    color: #fff;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  .buttonDelete {
+    @include button-styles(#ff0000, 0.1rem 1rem, #fff, 0.3rem, none, pointer, 600, 0.3s);
+
+    &:hover {
+      background-color: #2c0000;
+      color: #fff;
+      border: 1px solid #000;
+    }
+  }
+
+  .buttonBack {
+    @include button-styles(rgb(211, 211, 211), 0.1rem 1rem, #000, 0.3rem, none, pointer, 600, 0.3s);
+
+    &:hover {
+      background-color: rgb(62, 62, 62);
+      border: 1px solid #000;
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .buttonModal {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .buttonModal {
+    margin-left: 0.3rem;
+    padding: 0.25rem 0.3rem;
+  }
+}
+
+@media screen and (max-width: 461px) {
+  .mainTitle {
+    font-size: 1rem;
+  }
+
+  .buttonModal {
+    padding: 0.27rem 0.2rem;
+  }
+}

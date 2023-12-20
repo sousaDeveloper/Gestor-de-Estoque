@@ -43,7 +43,7 @@ export default function ItemForm({ itemToUpdate }) {
 
       toast.success("Produto adicionado à lista", {
         position: "top-right",
-        autoClose: 3000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         theme: "dark",

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import useStock from "../../hooks/useStock";
 import styles from "./styles.module.scss";
+import ModalDelete from "../DeleteModalButton/ModalDelete";
 
 export default function ItemsTable() {
   const { items } = useStock();
@@ -30,6 +31,7 @@ export default function ItemsTable() {
               <Link to={`/items/${item.id}/update`} className={styles.buttonUpdate}>
                 Atualizar
               </Link>
+              <ModalDelete itemId={item.id} itemName={item.name} />
             </td>
           </tr>
         ))}

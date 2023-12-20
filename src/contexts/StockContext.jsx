@@ -27,9 +27,18 @@ export default function StockContextProvider({ children }) {
     });
   };
 
+  const deleteItems = (itemId) => {
+    setItems((currentState) => {
+      const updatedItems = currentState.filter((item) => item.id !== itemId);
+      localStorage.setItem("react-stock", JSON.stringify(updatedItems));
+      return updatedItems;
+    });
+  };
+
   const stock = {
     items,
     addItems,
+    deleteItems,
   };
 
   return <StockContext.Provider value={stock}>{children}</StockContext.Provider>;
