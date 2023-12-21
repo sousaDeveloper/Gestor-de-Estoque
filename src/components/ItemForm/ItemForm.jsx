@@ -20,7 +20,7 @@ export default function ItemForm({ itemToUpdate }) {
   };
 
   const [item, setItem] = useState(itemToUpdate ? itemToUpdate : defaultItem);
-  const { addItems } = useStock();
+  const { addItem } = useStock();
   const inputRef = useRef(null);
 
   const handleChange = (ev) => {
@@ -37,7 +37,7 @@ export default function ItemForm({ itemToUpdate }) {
 
     try {
       const validItem = new StockItem(item);
-      addItems(validItem);
+      addItem(validItem);
       setItem(defaultItem);
       inputRef.current.focus();
 

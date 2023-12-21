@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import ItemsLayout from "./pages/items/ItemsLayout/Layout";
 import ListItems from "./pages/items/ListItems";
 import CreateItem from "./pages/items/CreateItem";
-import ShowItem from "./pages/items/ShowItem";
+import ShowItem from "./pages/items/ShowItem/ShowItem";
 import UpdateItem from "./pages/items/UpdateItem";
 
 const router = createBrowserRouter([

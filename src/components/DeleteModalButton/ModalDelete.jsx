@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useStock from "../../hooks/useStock";
+import { useNavigate } from "react-router-dom";
 
 ModalDelete.propTypes = {
   itemName: PropTypes.string,
@@ -25,7 +26,8 @@ const customStyles = {
 
 export default function ModalDelete({ itemName, itemId }) {
   const [modalIsOpen, setIsOpen] = useState(false);
-  const { deleteItems } = useStock();
+  const { deleteItem } = useStock();
+  const navigate = useNavigate();
 
   function openModal() {
     setIsOpen(true);
@@ -36,16 +38,21 @@ export default function ModalDelete({ itemName, itemId }) {
   }
 
   const handleDelete = () => {
-    toast.info(`Item: "${itemName}" foi excluído.`, {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      theme: "dark",
-    });
     setIsOpen(false);
-    deleteItems(itemId);
+    deleteItem(itemId);
+    setTimeout(() => {
+      const notify = toast.info(`Item: "${itemName}" foi excluído.`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        theme: "dark",
+      });
+      console.log(notify);
+      return notify;
+    }, 1000);
+    navigate("/items");
   };
 
   return (
@@ -53,11 +60,11 @@ export default function ModalDelete({ itemName, itemId }) {
       <button className={styles.buttonModal} onClick={openModal}>
         Excluir
       </button>
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} >
+      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles}>
         <h2 className={styles.mainTitle}>Tem certeza que deseja excluir {itemName}?</h2>
         <div className={styles.buttons}>
           <button className={styles.buttonDelete} onClick={handleDelete}>
-            <p>Excluir</p>
+            Excluir
           </button>
           <button onClick={closeModal} className={styles.buttonBack}>
             Voltar

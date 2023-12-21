@@ -19,7 +19,7 @@ export default function StockContextProvider({ children }) {
     return items;
   });
 
-  const addItems = (item) => {
+  const addItem = (item) => {
     setItems((currentState) => {
       const updatedItems = [item, ...currentState];
       localStorage.setItem("react-stock", JSON.stringify(updatedItems));
@@ -27,7 +27,11 @@ export default function StockContextProvider({ children }) {
     });
   };
 
-  const deleteItems = (itemId) => {
+  const getItem = (itemId) => {
+    return items.find((item) => item.id === +itemId);
+  };
+
+  const deleteItem = (itemId) => {
     setItems((currentState) => {
       const updatedItems = currentState.filter((item) => item.id !== itemId);
       localStorage.setItem("react-stock", JSON.stringify(updatedItems));
@@ -37,8 +41,9 @@ export default function StockContextProvider({ children }) {
 
   const stock = {
     items,
-    addItems,
-    deleteItems,
+    addItem,
+    getItem,
+    deleteItem,
   };
 
   return <StockContext.Provider value={stock}>{children}</StockContext.Provider>;
