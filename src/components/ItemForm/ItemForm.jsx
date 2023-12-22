@@ -1,16 +1,19 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./styles.module.scss";
 import StockItem, { CATEGORIES } from "../../entities/StockItem";
 import useStock from "../../hooks/useStock";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 ItemForm.propTypes = {
   itemToUpdate: PropTypes.object,
+  name: PropTypes.string,
+  buttonContent: PropTypes.string,
 };
 
-export default function ItemForm({ itemToUpdate }) {
+export default function ItemForm({ itemToUpdate, name, buttonContent }) {
   const defaultItem = {
     name: "",
     description: "",
@@ -20,8 +23,8 @@ export default function ItemForm({ itemToUpdate }) {
   };
 
   const [item, setItem] = useState(itemToUpdate ? itemToUpdate : defaultItem);
-  const { addItem } = useStock();
-  const inputRef = useRef(null);
+  const { addItem, updateItem } = useStock();
+  const navigate = useNavigate();
 
   const handleChange = (ev) => {
     setItem((currentState) => {
@@ -36,18 +39,30 @@ export default function ItemForm({ itemToUpdate }) {
     ev.preventDefault();
 
     try {
-      const validItem = new StockItem(item);
-      addItem(validItem);
-      setItem(defaultItem);
-      inputRef.current.focus();
-
-      toast.success("Produto adicionado à lista", {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        theme: "dark",
-      });
+      if (itemToUpdate) {
+        updateItem(itemToUpdate.id, item);
+        toast.success(`Item: "${itemToUpdate.name}" atualizado!`, {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          theme: "dark",
+        });
+        setTimeout(() => {
+          navigate("/items");
+        }, 2000);
+      } else {
+        const validItem = new StockItem(item);
+        addItem(validItem);
+        setItem(defaultItem);
+        toast.success("Item adicionado à lista", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          theme: "dark",
+        });
+      }
     } catch (err) {
       console.log(err.message);
     }
@@ -58,7 +73,7 @@ export default function ItemForm({ itemToUpdate }) {
       <div className={styles.row}>
         <fieldset>
           <legend>
-            <h1>Criar Produto</h1>
+            <h1>{!name ? "Criar produto" : "Atualizar Produto"}</h1>
           </legend>
           <div className={styles.gridForm}>
             <div>
@@ -70,7 +85,6 @@ export default function ItemForm({ itemToUpdate }) {
                 required
                 value={item.name}
                 onChange={handleChange}
-                ref={inputRef}
                 maxLength={20}
                 autoComplete="off"
               />
@@ -127,7 +141,7 @@ export default function ItemForm({ itemToUpdate }) {
                 onChange={handleChange}
                 maxLength={40}
               />
-              <button className={styles.buttonSave}>Salvar</button>
+              <button className={styles.buttonSave}>{!buttonContent ? "Salvar" : "Atualizar"}</button>
             </div>
           </div>
         </fieldset>

@@ -31,6 +31,16 @@ export default function StockContextProvider({ children }) {
     return items.find((item) => item.id === +itemId);
   };
 
+  const updateItem = (itemId, newAttributes) => {
+    setItems((currentState) => {
+      const findItemIndex = currentState.findIndex((item) => item.id === +itemId);
+      const updatedItems = [...currentState];
+      Object.assign(updatedItems[findItemIndex], newAttributes, { updatedAt: new Date().toLocaleString() });
+      localStorage.setItem("react-stock", JSON.stringify(updatedItems));
+      return updatedItems
+    });
+  };
+
   const deleteItem = (itemId) => {
     setItems((currentState) => {
       const updatedItems = currentState.filter((item) => item.id !== itemId);
@@ -44,6 +54,7 @@ export default function StockContextProvider({ children }) {
     addItem,
     getItem,
     deleteItem,
+    updateItem
   };
 
   return <StockContext.Provider value={stock}>{children}</StockContext.Provider>;

@@ -38,20 +38,16 @@ export default function ModalDelete({ itemName, itemId }) {
   }
 
   const handleDelete = () => {
+    toast.info(`Item: "${itemName}" foi excluído.`, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      theme: "dark",
+    });
     setIsOpen(false);
     deleteItem(itemId);
-    setTimeout(() => {
-      const notify = toast.info(`Item: "${itemName}" foi excluído.`, {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        theme: "dark",
-      });
-      console.log(notify);
-      return notify;
-    }, 1000);
     navigate("/items");
   };
 

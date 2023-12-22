@@ -100,7 +100,6 @@
   }
 }
 
-
 @media screen and (max-width: 768px) {
   .item {
     width: 90%;
@@ -114,7 +113,8 @@
     margin-top: 2.5rem;
   }
 
-  .buttonUpdate, .buttonBack {
+  .buttonUpdate,
+  .buttonBack {
     margin-right: 0.6rem;
     padding: 0 0 0.3rem 0;
   }
