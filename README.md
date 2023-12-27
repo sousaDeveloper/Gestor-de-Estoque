@@ -39,6 +39,3 @@ npm start ou yarn start
 
 ## Contribuições
 Contribuições são bem-vindas! Se você encontrar problemas, bugs ou tiver sugestões para melhorar o projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request.
-
-## Licença
-Este projeto está licenciado sob a Licença MIT.
