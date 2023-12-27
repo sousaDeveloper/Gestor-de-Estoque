@@ -1,8 +1,28 @@
-# React + Vite
+# Gestor de Estoque
+Descrição do Projeto
+O Gestor de Estoque é um projeto que visa facilitar a gestão de estoques, permitindo aos usuários adicionar novos itens, atualizar informações, visualizar o estoque e excluir itens desnecessários. Desenvolvido com foco no aprendizado e aprimoramento das habilidades de roteamento em React, o projeto utiliza uma variedade de tecnologias, incluindo XML, Scss, Git, React e Vite.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma ferramenta versátil que pode beneficiar tanto empresas quanto usuários individuais. Empresas podem aproveitar a eficiência na organização e controle de estoque, otimizando seus processos internos. Para usuários individuais, o Gestor de Estoque oferece uma solução prática para acompanhar seus próprios inventários, seja em âmbito doméstico ou em pequenos empreendimentos.
 
-Currently, two official plugins are available:
+Funcionalidades
+Adição de Itens: Permite a inclusão de novos itens ao estoque, fornecendo informações relevantes, como nome, quantidade, descrição, etc.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Atualização do Estoque: Oferece a capacidade de atualizar as informações dos itens existentes no estoque, permitindo correções ou alterações conforme necessário.
+
+Visualização do Estoque: Permite aos usuários visualizar o estoque atual, facilitando a identificação de itens disponíveis e suas respectivas quantidades.
+
+Exclusão de Itens: Possibilita a remoção de itens do estoque, simplificando a organização e garantindo que apenas informações relevantes sejam mantidas.
+
+Instalação e Execução
+Para executar o projeto localmente, siga os passos abaixo:
+
+Clone o repositório: git clone https://github.com/seu-usuario/nome-do-repositorio.git
+Acesse o diretório do projeto: cd nome-do-repositorio
+Instale as dependências: npm install ou yarn install
+Inicie a aplicação: npm start ou yarn start
+Acesse a aplicação no navegador: http://localhost:3000
+Contribuições
+Contribuições são bem-vindas! Se você encontrar problemas, bugs ou tiver sugestões para melhorar o projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+Licença
+Este projeto está licenciado sob a Licença MIT.
