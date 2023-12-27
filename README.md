@@ -33,7 +33,7 @@ npm install ou yarn install
 ```
 4. Inicie a aplicação: 
 ```
-npm start ou yarn start
+npm run dev ou yarn run dev
 ```
 5. E por fim, inicie com o Vite. 
 
