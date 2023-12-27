@@ -1,8 +1,12 @@
+@mixin header-styleds($display, $align-items, $justify-content, $padding) {
+  display: $display;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  padding: $padding;
+}
+
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
+  @include header-styleds(flex, center, space-between, 1rem);
   background-color: #393939;
   font-weight: 600;
 }
@@ -30,7 +34,6 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-
 .menu > li:hover > a {
   color: #fff;
 }
@@ -41,12 +44,9 @@ a {
 }
 
 .menu > li a {
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 7px;
+  @include header-styleds(flex, center, center, 0 0.55rem);
   text-decoration: none;
+  color: #fff;
   position: relative;
   height: 100%;
   transition: 0.3s;

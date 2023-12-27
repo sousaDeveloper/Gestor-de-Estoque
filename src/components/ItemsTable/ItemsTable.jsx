@@ -24,14 +24,14 @@ export default function ItemsTable() {
             <td>{item.name}</td>
             <td>{item.quantity} unid.</td>
             <td>{item.category}</td>
-            <td className="buttons">
+            <td className={styles.buttons}>
               <Link to={`/items/${item.id}`} className={styles.buttonShow}>
                 Ver
               </Link>
               <Link to={`/items/${item.id}/update`} className={styles.buttonUpdate}>
                 Atualizar
               </Link>
-              <ModalDelete itemId={item.id} itemName={item.name} />
+              <ModalDelete itemId={item.id} itemName={item.name}/>
             </td>
           </tr>
         ))}

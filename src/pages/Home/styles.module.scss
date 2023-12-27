@@ -1,14 +1,18 @@
+@mixin styleds-card($display, $align-items, $justify-content, $gap) {
+  display: $display;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  gap: $gap;
+}
+
 .row {
-  display: flex;
+  @include styleds-card(flex, center, center, 2rem);
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  align-items: center;
   font-weight: 600;
   margin-top: 1rem;
 
   .dashboardCard {
-    display: flex;
+    @include styleds-card(flex, center, none, 0);
     flex-direction: column;
     background-color: #1f1f1f;
     padding: 1rem;
@@ -25,15 +29,43 @@
 }
 
 .table {
+  @include styleds-card(flex, center, space-between, 2rem);
   padding: 1.7rem;
   margin-top: 1rem;
-  display: flex;
-  justify-content: space-between;
-  gap: 2rem;
 
   .recent,
   .low {
     width: 50%;
+    box-shadow: 5px 5px 1.5rem #000;
+
+    .showButton {
+      text-decoration: none;
+      background-color: rgb(44, 44, 44);
+      color: #fff;
+      padding: 0.3rem 1.3rem;
+      border-radius: 0.3rem;
+      transition: 0.3s;
+      border: 1px solid #000;
+
+      &:hover {
+        background-color: #fff;
+        color: #000;
+      }
+    }
+
+    .buttonAdd {
+      text-decoration: none;
+      color: #fff;
+      background-color: #1f1f1f;
+      padding: 0.5rem 1rem;
+      border-radius: 0.3rem;
+      transition: 0.3s;
+
+      &:hover {
+        color: #1f1f1f;
+        background-color: #fff;
+      }
+    }
   }
 }
 
@@ -51,6 +83,21 @@
       min-width: 12rem;
     }
   }
+  .table {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    tr {
+      font-size: 1rem;
+    }
+
+    .recent,
+    .low {
+      width: 100%;
+    }
+  }
 }
 
 @media screen and (max-width: 448px) {
@@ -59,5 +106,9 @@
       text-align: center;
       min-width: 10rem;
     }
+  }
+  .table {
+    padding: 0;
+    margin-top: 3rem;
   }
 }

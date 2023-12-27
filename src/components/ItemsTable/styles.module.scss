@@ -1,11 +1,11 @@
-@mixin button-styles($text-decoration, $justify-content, $background-color, $color, $padding, $border-radius, $transition) {
+@mixin button-styles($text-decoration, $background-color, $color, $padding, $border-radius, $transition, $max-height) {
   text-decoration: $text-decoration;
-  justify-content: $justify-content;
   background-color: $background-color;
   color: $color;
   padding: $padding;
   border-radius: $border-radius;
   transition: $transition;
+  max-height: $max-height;
 }
 
 table {
@@ -39,9 +39,15 @@ table {
       padding: 1rem 2rem;
     }
 
+    .buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+    }
+
     .buttonShow {
-      @include button-styles(none, center, rgb(44, 44, 44), #fff, 0.3rem 1.3rem, 0.3rem, 0.3s);
-      margin: 0.5rem;
+      @include button-styles(none, rgb(44, 44, 44), #fff, 0.3rem 1.3rem, 0.3rem, 0.3s, 2rem);
       border: 1px solid #000;
 
       &:hover {
@@ -51,7 +57,7 @@ table {
     }
 
     .buttonUpdate {
-      @include button-styles(none, center, #fff, #000, 0.3rem 1rem, 0.3rem, 0.3s);
+      @include button-styles(none, #fff, #000, 0.3rem 1rem, 0.3rem, 0.3s, 2rem);
       border: 1px solid #000;
 
       &:hover {
@@ -170,6 +176,7 @@ table {
         padding: 0.3rem 0.2rem;
         font-size: 0.4rem;
       }
+
     }
   }
 }

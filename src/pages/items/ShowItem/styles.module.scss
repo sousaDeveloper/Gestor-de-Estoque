@@ -5,7 +5,7 @@
   height: 20rem;
   border-radius: 0.2rem 0.2rem 4rem 0.2rem;
   background: rgba(255, 255, 255, 0.096);
-  box-shadow: 5px 5px 10px #000000;
+  box-shadow: 5px 5px 5px #000000;
 }
 
 .description {
@@ -14,6 +14,8 @@
 
 .buttons {
   margin-top: 3.5rem;
+  display: flex;
+  gap: 0.3rem;
 }
 
 .buttonUpdate {
@@ -33,7 +35,6 @@
 
 .buttonBack {
   font-weight: 600;
-  margin-left: 0.6rem;
   padding: 0.2rem 0.7rem 0.3rem 0.7rem;
   width: 5rem;
   border-radius: 3px;
@@ -52,7 +53,7 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   margin-top: 1rem;
 
   span {
@@ -113,11 +114,6 @@
     margin-top: 2.5rem;
   }
 
-  .buttonUpdate,
-  .buttonBack {
-    margin-right: 0.6rem;
-    padding: 0 0 0.3rem 0;
-  }
 }
 
 @media screen and (max-width: 697px) {
@@ -126,15 +122,11 @@
   }
 
   .buttons {
-    margin-top: 3.5rem;
+    margin-top: 3rem;
   }
 
   .description {
     margin-top: 2.5rem;
-  }
-
-  .buttonUpdate {
-    margin-right: 0.6rem;
   }
 }
 

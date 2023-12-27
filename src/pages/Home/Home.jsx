@@ -14,7 +14,7 @@ export default function Home() {
   const recentItems = items.filter((item) => item.createdAt >= limitDate && item.createdAt <= today);
   const recentTotal = recentItems.length;
 
-  const lowQuantityItems = items.filter((item) => item.quantity < 10);
+  const lowQuantityItems = items.filter((item) => item.quantity < 7);
   const lowQuantityTotal = lowQuantityItems.length;
 
   return (
@@ -48,16 +48,23 @@ export default function Home() {
               </tr>
             </thead>
             <tbody>
-              {recentItems.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.name}</td>
-                  <td>
-                    <Link to={`/items/${item.id}`} className={styles.showButton}>
-                      Ver
-                    </Link>
-                  </td>
+              {recentItems.length === 0 ? (
+                <tr>
+                  <td>Nenhum item adicionado...</td>
+                  <td><Link to="/items/new" className={styles.buttonAdd}>Adicionar</Link></td>
                 </tr>
-              ))}
+              ) : (
+                recentItems.map((item) => (
+                  <tr key={item.id}>
+                    <td>{item.name}</td>
+                    <td>
+                      <Link to={`/items/${item.id}`} className={styles.showButton}>
+                        Ver
+                      </Link>
+                    </td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>
@@ -71,17 +78,25 @@ export default function Home() {
               </tr>
             </thead>
             <tbody>
-              {lowQuantityItems.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.name}</td>
-                  <td>{item.quantity}</td>
-                  <td>
-                    <Link to={`/items/${item.id}`} className={styles.showButton}>
-                      Ver
-                    </Link>
-                  </td>
+              {lowQuantityItems.length === 0 ? (
+                <tr>
+                  <td>Sem itens acabando...</td>
+                  <td>-</td>
+                  <td>-</td>
                 </tr>
-              ))}
+              ) : (
+                lowQuantityItems.map((item) => (
+                  <tr key={item.id}>
+                    <td>{item.name}</td>
+                    <td>{item.quantity}</td>
+                    <td>
+                      <Link to={`/items/${item.id}`} className={styles.showButton}>
+                        Ver
+                      </Link>
+                    </td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>
