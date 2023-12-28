@@ -6,13 +6,15 @@ O Gestor de Estoque é um projeto que visa facilitar a gestão de estoques, perm
 
 Este projeto é uma ferramenta versátil que pode beneficiar tanto empresas quanto usuários individuais. Empresas podem aproveitar a eficiência na organização e controle de estoque, otimizando seus processos internos. Para usuários individuais, o Gestor de Estoque oferece uma solução prática para acompanhar seus próprios inventários, seja em âmbito doméstico ou em pequenos empreendimentos.
 
+Além disso, o projeto adota a abordagem de SPAs (Single Page Applications), proporcionando uma experiência de usuário mais dinâmica, onde as interações ocorrem em uma única página, evitando a necessidade de carregar páginas inteiras a cada ação.
+
 ## Funcionalidades
 
 - __Adição de Itens:__ Permite a inclusão de novos itens ao estoque, fornecendo informações relevantes, como nome, quantidade, descrição, etc.
 
 - **Atualização do Estoque:** Oferece a capacidade de atualizar as informações dos itens existentes no estoque, permitindo correções ou alterações conforme necessário.
 
-- **Visualização do Estoque:** Permite aos usuários visualizar o estoque atual, facilitando a identificação de itens disponíveis e suas respectivas quantidades.
+- **Visualização do Estoque:** Permite aos usuários visualizar o estoque atual, facilitando a identificação de itens disponíveis, itens que estão acabando e os itens adicionados recentemente (adicionados há menos de 10 dias).
 
 - **Exclusão de Itens:** Possibilita a remoção de itens do estoque, simplificando a organização e garantindo que apenas informações relevantes sejam mantidas.
 
