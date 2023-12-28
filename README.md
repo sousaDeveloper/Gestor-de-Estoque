@@ -1,12 +1,14 @@
 # Gestor de Estoque
 
+
 ## Descrição do Projeto
 
 O Gestor de Estoque é um projeto que visa facilitar a gestão de estoques, permitindo aos usuários adicionar novos itens, atualizar informações, visualizar o estoque e excluir itens desnecessários. Desenvolvido com foco no aprendizado e aprimoramento das habilidades de roteamento em React, o projeto utiliza uma variedade de tecnologias, incluindo XML, Scss, Git, React, Vite, e faz uso do LocalStorage para salvar localmente os produtos/itens.
 
+Além disso, o projeto adota a abordagem de SPAs (Single Page Applications), proporcionando uma experiência de usuário mais dinâmica, onde as interações ocorrem em uma única página, evitando a necessidade de carregar páginas inteiras a cada ação.
+
 Este projeto é uma ferramenta versátil que pode beneficiar tanto empresas quanto usuários individuais. Empresas podem aproveitar a eficiência na organização e controle de estoque, otimizando seus processos internos. Para usuários individuais, o Gestor de Estoque oferece uma solução prática para acompanhar seus próprios inventários, seja em âmbito doméstico ou em pequenos empreendimentos.
 
-Além disso, o projeto adota a abordagem de SPAs (Single Page Applications), proporcionando uma experiência de usuário mais dinâmica, onde as interações ocorrem em uma única página, evitando a necessidade de carregar páginas inteiras a cada ação.
 
 ## Funcionalidades
 
@@ -17,6 +19,7 @@ Além disso, o projeto adota a abordagem de SPAs (Single Page Applications), pro
 - **Visualização do Estoque:** Permite aos usuários visualizar o estoque atual, facilitando a identificação de itens disponíveis, itens que estão acabando e os itens adicionados recentemente (adicionados há menos de 10 dias).
 
 - **Exclusão de Itens:** Possibilita a remoção de itens do estoque, simplificando a organização e garantindo que apenas informações relevantes sejam mantidas.
+
 
 ## Instalação e Execução
 Para executar o projeto localmente, siga os passos abaixo:
@@ -38,6 +41,7 @@ npm install ou yarn install
 npm run dev ou yarn run dev
 ```
 5. E por fim, inicie com o Vite. 
+
 
 ## Contribuições
 Contribuições são bem-vindas! Se você encontrar problemas, bugs ou tiver sugestões para melhorar o projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request.
