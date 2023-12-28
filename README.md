@@ -8,13 +8,13 @@ Este projeto é uma ferramenta versátil que pode beneficiar tanto empresas quan
 
 ## Funcionalidades
 
-- Adição de Itens: Permite a inclusão de novos itens ao estoque, fornecendo informações relevantes, como nome, quantidade, descrição, etc.
+- **Adição de Itens:** Permite a inclusão de novos itens ao estoque, fornecendo informações relevantes, como nome, quantidade, descrição, etc.
 
-- Atualização do Estoque: Oferece a capacidade de atualizar as informações dos itens existentes no estoque, permitindo correções ou alterações conforme necessário.
+- **Atualização do Estoque:** Oferece a capacidade de atualizar as informações dos itens existentes no estoque, permitindo correções ou alterações conforme necessário.
 
-- Visualização do Estoque: Permite aos usuários visualizar o estoque atual, facilitando a identificação de itens disponíveis e suas respectivas quantidades.
+- **Visualização do Estoque:** Permite aos usuários visualizar o estoque atual, facilitando a identificação de itens disponíveis e suas respectivas quantidades.
 
-- Exclusão de Itens: Possibilita a remoção de itens do estoque, simplificando a organização e garantindo que apenas informações relevantes sejam mantidas.
+- **Exclusão de Itens:** Possibilita a remoção de itens do estoque, simplificando a organização e garantindo que apenas informações relevantes sejam mantidas.
 
 ## Instalação e Execução
 Para executar o projeto localmente, siga os passos abaixo:
