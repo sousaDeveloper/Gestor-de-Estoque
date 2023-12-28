@@ -8,7 +8,7 @@ Este projeto é uma ferramenta versátil que pode beneficiar tanto empresas quan
 
 ## Funcionalidades
 
-- **Adição de Itens:** Permite a inclusão de novos itens ao estoque, fornecendo informações relevantes, como nome, quantidade, descrição, etc.
+- __Adição de Itens:__ Permite a inclusão de novos itens ao estoque, fornecendo informações relevantes, como nome, quantidade, descrição, etc.
 
 - **Atualização do Estoque:** Oferece a capacidade de atualizar as informações dos itens existentes no estoque, permitindo correções ou alterações conforme necessário.
 
